@@ -1,0 +1,35 @@
+---
+title: "Chapter 1"
+author: "Bhupendrasinh Thakre"
+date: "3/17/2020"
+output: html_document
+---
+
+### Chapter 1
+## Mean, Median, and Variance
+
+```{r}
+library(matrixStats)
+state <- read.csv("https://raw.githubusercontent.com/bthakr1/Statistics_For_Data_Science/master/state.csv")
+
+head(state)
+
+# Mean of Population
+mean(state[["Population"]])
+# Mean of population with trimming on both end by 10%
+mean(state[["Population"]], trim = 0.1)
+# Median of Population
+median(state[["Population"]])
+# Weighted Mean of Murder Rate based on Population for respective state
+weighted.mean(state[["Murder.Rate"]],w=state[["Population"]])
+```
+
+## Variability Estimates
+
+Measures whether the data values are tightly clustered or spared out.
+
+1. Deviation : Difference between observed value and mean estimate of location
+
+2. Variance : Sum of Squared Deviation from the mean divided by n-1, where n is the number of observations
+
+3. Standard Deviation : The square root of variance
