@@ -32,4 +32,4 @@ Measures whether the data values are tightly clustered or spared out.
 
 2. Variance : Sum of Squared Deviation from the mean divided by n-1, where n is the number of observations
 
-3. Standard Deviation : The square root of variance
+3. Standard Deviation : The square root of variance.
