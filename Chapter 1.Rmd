@@ -89,7 +89,15 @@ hist(state[["Population"]], breaks = breaks, main = "Histogram of Population", x
 ```
 
 
+Density Plot : Shows the distribution of data values as a continous line.  Sort of "smoothed histogram". 
 
+```{r}
+hist(state[["Murder.Rate"]],  xlab = "Murder Rate", ylab = "Frequency", main="Histogram for Murder Rate")
+# Density Plot for Murder Rate
+hist(state[["Murder.Rate"]], freq = FALSE, , xlab = "Murder Rate", ylab = "Density", main="Density Plot for Murder Rate")
+lines(density(state[["Murder.Rate"]]), lwd = 3, col = "blue")
+
+```
 
 
 
