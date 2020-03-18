@@ -33,3 +33,8 @@ Measures whether the data values are tightly clustered or spared out.
 2. Variance : Sum of Squared Deviation from the mean divided by n-1, where n is the number of observations
 
 3. Standard Deviation : The square root of variance.
+
+4. Percentile : The value such that P percent of the value take on this value or less and (100-P) 
+take on this value or more
+
+Variance, Standard Deviation, and Mean Absolute Deviation are not robust to outliers and extreme values
