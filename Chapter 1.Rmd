@@ -52,3 +52,39 @@ mad(state[["Population"]])
 
 
 ```
+
+Spread of Murder Rate based on Quantiles
+
+```{r}
+quantile(state[["Murder.Rate"]],p=c(0.05,0.25,0.50,0.75,0.95))
+
+quantile(state[["Murder.Rate"]],p=c(0.10,0.25,0.50,0.75,0.90))
+```
+
+Boxplot to visulaize the quantile information
+
+```{r}
+boxplot(state[["Population"]]/1000000,ylab="Population in Millions")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
