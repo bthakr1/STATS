@@ -80,7 +80,13 @@ table(pop_freq)
 ```
 
 
+Histogram : Used to plot bins on X Axis and Count on Y Axis
 
+```{r}
+
+hist(state[["Population"]], breaks = breaks, main = "Histogram of Population", xlab = "Population Bins")
+
+```
 
 
 
