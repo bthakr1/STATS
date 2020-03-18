@@ -10,7 +10,7 @@ output: html_document
 
 ```{r}
 library(matrixStats)
-state <- read.csv("https://raw.githubusercontent.com/bthakr1/Statistics_For_Data_Science/master/state.csv")
+state <- read.csv("https://raw.githubusercontent.com/bthakr1/STATS/master/state.csv")
 
 head(state)
 
