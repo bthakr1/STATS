@@ -37,4 +37,18 @@ Measures whether the data values are tightly clustered or spared out.
 4. Percentile : The value such that P percent of the value take on this value or less and (100-P) 
 take on this value or more
 
-Variance, Standard Deviation, and Mean Absolute Deviation are not robust to outliers and extreme values
+Variance, Standard Deviation, and Mean Absolute Deviation are not robust to outliers and extreme values.
+
+5. IQR : Difference between 75th Percentile and 25th Percentile.
+
+
+```{r}
+# Standard Deviation of Population
+sd(state[["Population"]])
+# Inter Quantile Range of Population
+IQR(state[["Population"]])
+# Mean Absolute Deviation (Not suspectible to outliers)
+mad(state[["Population"]])
+
+
+```
