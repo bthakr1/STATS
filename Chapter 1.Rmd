@@ -75,7 +75,11 @@ breaks <- seq(from=min(state[["Population"]]),to=max(state[["Population"]]), len
 
 pop_freq <- cut(state[["Population"]], breaks = breaks,right = TRUE, include.lowest = TRUE)
 
-table(pop_freq)
+breaks <- seq(from=min(state[["Population"]]), to = max(state[["Population"]]), length = 11)
+pop_freq <- cut(state[["Population"]], breaks = breaks, right = TRUE, include.lowest = TRUE)
+state['PopFreq'] <- pop_freq
+
+
 
 ```
 
@@ -115,24 +119,22 @@ library(ggplot2)
 library(corrplot)
 library(descr)
 airline <- read.csv("https://raw.githubusercontent.com/bthakr1/STATS/master/airline_stats.csv")
+dfw <- read.csv("https://raw.githubusercontent.com/bthakr1/STATS/master/dfw_airline.csv")
 
-breaks <- seq(from=min(state[["Population"]]), to = max(state[["Population"]]), length = 11)
-pop_freq <- cut(state[["Population"]], breaks = breaks, right = TRUE, include.lowest = TRUE)
-state['PopFreq'] <- pop_freq
+head(dfw)
 
+barplot(as.matrix(dfw)/6, cex.axis=0.5)
 
-state_abb <- state %>% 
-  arrange(Population) %>% 
-  group_by(PopFreq) %>%
-  summarize(state = paste(Abbreviation, collapse = ","), .drop=FALSE) %>%
-  complete(PopFreq,fill=list(state='')) %>%
-  select(state)
 
 ```
 
 
+Bar Chart vs. Histogram 
 
+In **bar chart** the X axis represents different categories of a factor variable , while in **histogram** X Axis represents value of 
+single variable on numeric scale.
 
+**Expected Value : A form of weighted mean. It adds the ideas of future expectations and probability weights , often based on subjective judgements **
 
 
 
