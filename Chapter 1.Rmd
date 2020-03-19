@@ -101,7 +101,34 @@ lines(density(state[["Murder.Rate"]]), lwd = 3, col = "blue")
 
 
 
+# Exploring Binary and Categorical Data
 
+Mode : The most commonly occuring category or value
+
+Bar Chart : The frequency or proportion for each ctegory plotted as bars
+
+``` {r}
+# Getting airline Data
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(corrplot)
+library(descr)
+airline <- read.csv("https://raw.githubusercontent.com/bthakr1/STATS/master/airline_stats.csv")
+
+breaks <- seq(from=min(state[["Population"]]), to = max(state[["Population"]]), length = 11)
+pop_freq <- cut(state[["Population"]], breaks = breaks, right = TRUE, include.lowest = TRUE)
+state['PopFreq'] <- pop_freq
+
+
+state_abb <- state %>% 
+  arrange(Population) %>% 
+  group_by(PopFreq) %>%
+  summarize(state = paste(Abbreviation, collapse = ","), .drop=FALSE) %>%
+  complete(PopFreq,fill=list(state='')) %>%
+  select(state)
+
+```
 
 
 
