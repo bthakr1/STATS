@@ -40,8 +40,11 @@ filter(flights, carrier == "UA" | carrier == "AA" | carrier == "DL")
 
 filter(flights, month == 7 | month == 8 | month == 9)
 
+filter(flights, arr_delay > 120 | dep_delay <= 0)
 
+flights[between(flights$month, 7,9),]
 
+filter(is.na(flights$year))
 
 
 
