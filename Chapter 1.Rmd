@@ -217,19 +217,50 @@ ggplot(kc_tax0,(aes(x=kc_tax0$SqFtTotLiving, y = kc_tax0$TaxAssessedValue))) +
 ```
 
 
+** Two Categorical Variables **
+
+Contingency Table : To evaluate value of a factor and number of values in it 
+
+```{r}
+library(descr)
+library(plyr)
+options("scipen"=100, "digits"=4)
+lc_loans <- read.csv("https://raw.githubusercontent.com/bthakr1/STATS/master/lc_loans.csv")
+lc_loans$GRADE <- cut(lc_loans$grade,
+                      breaks = c(0,2,4,6,8),
+                      labels = c("A","B","C","D"))
+x_tab <- CrossTable(lc_loans$GRADE, lc_loans$status, prop.chisq = FALSE, prop.t = TRUE, prop.c = TRUE, prop.r = FALSE, format = "SPSS")
+
+x_tab
+```
 
 
 
+**Categorical and Numerical Data**
+
+```{r}
+
+boxplot(airline$pct_carrier_delay ~ airline$airline, ylim = c(0,50), xlab = "Airline", ylab = "Percent Carrier Delay")
+
+```
+
+
+*Violin Plot* 
+
+Helps to identify the density as well , which is not possible with _boxplot_
 
 
 
+```{r}
+
+ggplot(data = airline, aes(airline, y = pct_carrier_delay)) + 
+  ylim(0,50) +
+  geom_violin() + 
+  geom_boxplot() +
+  labs(x = "" , y ="Daily % of Delayed Flights")
 
 
-
-
-
-
-
+```
 
 
 
