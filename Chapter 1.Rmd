@@ -157,7 +157,7 @@ Correlation Matrix
 ```{r}
 library(readr)
 sp500_sym <- read.csv("https://raw.githubusercontent.com/bthakr1/STATS/master/sp500_sym.csv", stringsAsFactors = FALSE)
-sp500_px <- read.csv("~/Documents/Practical_Data_Science_for_Data_Scientists/sp500_px.csv⁩")
+sp500_px <- read.csv("https://raw.githubusercontent.com/bthakr1/STATS/master/sp500_px.csv⁩")
 
 head(sp500_px)
 
