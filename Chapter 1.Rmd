@@ -257,7 +257,7 @@ ggplot(data = airline, aes(airline, y = pct_carrier_delay)) +
   ylim(0,50) +
   geom_violin() + 
   geom_boxplot() +
-  labs(x = "" , y ="Daily % of Delayed Flights")
+  labs(x = "Airline" , y ="Daily % of Delayed Flights")
 
 
 ```
