@@ -136,11 +136,33 @@ single variable on numeric scale.
 
 **Expected Value : A form of weighted mean. It adds the ideas of future expectations and probability weights , often based on subjective judgements **
 
-Added comment
+# Correlation
+
+Correlation Coefficient : Measures the extent to which numeric variables are associated with one another (-1 to +1)
+
+*Pearson Correlation Coeefieicient* (r): Multiply Deviation of Mean for One Variable with Another and divided by product of Standard 
+Deviation
+
+Numerator :
+
+$$\sum_{i=1}^{N}(x_i-\overline{x})(y_i-\overline{y})$$
+
+Denominator :
+
+$$(N-1)s_xs_y$$
 
 
+Correlation Matrix
 
+```{r}
+library(readr)
+sp500_sym <- read.csv("https://raw.githubusercontent.com/bthakr1/STATS/master/sp500_sym.csv", stringsAsFactors = FALSE)
+sp500_px <- read.csv("~/Documents/Practical_Data_Science_for_Data_Scientists/sp500_px.csv⁩")
 
+head(sp500_px)
 
+head(sp500_sym)
+
+```
 
 
