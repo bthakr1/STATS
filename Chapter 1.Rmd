@@ -182,8 +182,39 @@ plot(mtcars$mpg, mtcars$wt, xlab = "MPG", ylab = "Weight", main = "Scatter Plot 
 
 ```
 
+Scatter plots are good when we do not have much data. For larger data sets, we may want to use different way to visuzliae the data.
+
+```{r}
+library(ggplot2)
+library(hexbin)
+kc_tax <- read.csv("https://raw.githubusercontent.com/bthakr1/STATS/master/kc_tax.csv")
+
+kc_tax0 <- subset(kc_tax, kc_tax$TaxAssessedValue < 750000 & kc_tax$SqFtTotLiving > 100 & kc_tax$SqFtTotLiving < 3500)
+```
+
+```{r}
+
+# Visualize as hex bins
+
+ggplot(kc_tax0, (aes(x=kc_tax0$SqFtTotLiving,y=kc_tax0$TaxAssessedValue))) + 
+  stat_binhex(colour="white") +
+  theme_bw() +
+  scale_fill_gradient(low = "white", high = "black") +
+  labs(x="Finished Square Feet", y ="Tax Assessed Value")
+```
+
+To view as Countour Plots
+
+```{r}
+
+ggplot(kc_tax0,(aes(x=kc_tax0$SqFtTotLiving, y = kc_tax0$TaxAssessedValue))) +
+  theme_bw() +
+  geom_point(alpha = 0.1) +
+  geom_density2d(colour="red") +
+  labs(x="Finished Square Feet", y ="Tax Assessed Value")
 
 
+```
 
 
 
