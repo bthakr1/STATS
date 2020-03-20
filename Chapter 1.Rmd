@@ -154,15 +154,75 @@ $$(N-1)s_xs_y$$
 
 Correlation Matrix
 
+
+
 ```{r}
-library(readr)
-sp500_sym <- read.csv("https://raw.githubusercontent.com/bthakr1/STATS/master/sp500_sym.csv", stringsAsFactors = FALSE)
-sp500_px <- read.csv("https://raw.githubusercontent.com/bthakr1/STATS/master/sp500_px.csv⁩")
-
-head(sp500_px)
-
-head(sp500_sym)
+library(corrplot)
+# Based on Pearson Correlation
+correlation_mtcars_p <- cor(mtcars, use="complete.obs", method = "pearson")
+as.data.frame(correlation_mtcars_p)
+corrplot(correlation_mtcars_p, method = "ellipse")
+#Based on Spearman Correlation
+correlation_mtcars_s <- cor(mtcars, use="complete.obs", method = "spearman")
+as.data.frame(correlation_mtcars_s)
+corrplot(correlation_mtcars_s, method = "number")
 
 ```
+
+Correlation coefficient is sensitive to outliers in the data. 
+
+Other kind of correlations are **Spearman's Rho** and **Kendall's Tau**. These are based on the rank of the data. They are also robust to 
+outliers since these worrk on ranks than values. 
+
+Scatte Plot
+
+```{r}
+
+plot(mtcars$mpg, mtcars$wt, xlab = "MPG", ylab = "Weight", main = "Scatter Plot between MPG and Weight")
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
