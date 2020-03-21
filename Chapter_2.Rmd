@@ -4,3 +4,29 @@ author: "Bhupendrasinh Thakre"
 date: "3/21/2020"
 output: html_document
 ---
+*Sample* : Asubset of data from larger population.
+
+*Random Sampling* : Drawing elements into a sample at random
+
+```{r}
+
+x <- 1:12
+
+sample(x)
+
+#With replace 
+
+sample(x,replace = TRUE)
+
+# With Probability
+
+barplot(table(sample(1:3,100,replace = TRUE, prob = c(0.25,0.25,0.50))))
+
+# Bernoulli's Trials
+
+sample(c(0,1),10, replace = TRUE)
+
+```
+
+*Stratified Sampling* : Dividing the population into strat and randomly sampling from the strata.
+
