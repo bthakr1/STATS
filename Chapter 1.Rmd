@@ -263,7 +263,19 @@ ggplot(data = airline, aes(airline, y = pct_carrier_delay)) +
 ```
 
 
+Visualizing Multiple Variables
 
+```{r}
+
+ggplot(subset(kc_tax0, ZipCode %in% c(98188,98108,98126)), aes(x=SqFtTotLiving, y = TaxAssessedValue)) +
+  stat_binhex(colour="white") +
+  theme_bw() +
+  scale_fill_gradient(low = "white", high = "blue") +
+  labs(x="Finished Square Feet", y = "Tax Assessed Value") +
+  facet_wrap("ZipCode")
+
+
+```
 
 
 
