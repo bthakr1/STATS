@@ -6,9 +6,16 @@ output: html_document
 ---
 *Sample* : Asubset of data from larger population.
 
-*Random Sampling* : Drawing elements into a sample at random
+*Random Sampling* : Drawing elements into a sample at random. Each available member of the population being sampled
+has an eqqual chance of being chosen for the sample. 
+
+*with replacement* : Samples are drawn with replacement.
+
+*without replacement* : Samples are drawn without replacement. 
 
 ```{r}
+
+library(dplyr)
 
 x <- 1:12
 
@@ -26,7 +33,44 @@ barplot(table(sample(1:3,100,replace = TRUE, prob = c(0.25,0.25,0.50))))
 
 sample(c(0,1),10, replace = TRUE)
 
+# random sampling data frame (3 rows)
+
+sampled_mtcars = mtcars[sample(nrow(mtcars), 3, replace = TRUE),]
+
+sampled_mtcars
+
+# random sampling using dplyr
+
+sampled_mtcars_dplyr = sample_n(mtcars, 5)
+
+sampled_mtcars_dplyr
+
 ```
+
+**Bias** : Refers to measurement or sampling errors that are *systematic* and *produced* by the measurement or sampling process. 
+
+Distinction should be made between following two kind of errors. 
+
+1. Error due to random chance.
+2. Error due to bias. 
+
+*An unbiased* process will produce error but it is *random* and does not tend strongly in any direction. 
+
+*Sample Mean vs. Population Mean*
+
+$\overline{x}$ --> Mean of sample from a population
+
+$\mu$ --> Mean of a population
+
+
+
+
+
+
+
+
+
+
 
 *Stratified Sampling* : Dividing the population into strat and randomly sampling from the strata.
 
