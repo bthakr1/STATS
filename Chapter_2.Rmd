@@ -16,6 +16,7 @@ has an eqqual chance of being chosen for the sample.
 ```{r}
 
 library(dplyr)
+library(psych)
 
 x <- 1:12
 
@@ -84,6 +85,43 @@ Standard Error : Variability of a sample *statistcs* over many samples (not to b
 
 
 *****
+
+```{r}
+
+#get meand for variables in data frame 
+# excluding missing values
+sapply(mtcars, mean, na.rm = TRUE)
+# For median
+sapply(mtcars, median, na.rm = TRUE)
+# using psych package
+describe(mtcars)
+
+```
+
+
+
+```{r}
+
+loan_data <- read.csv("https://raw.githubusercontent.com/bthakr1/STATS/master/loan_data.csv")
+
+head(loan_data)
+
+
+```
+
+```{r}
+
+library(ggplot2)
+
+
+```
+
+
+
+
+
+
+
 
 
 
