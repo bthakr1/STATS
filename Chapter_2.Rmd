@@ -67,6 +67,36 @@ $\mu$ --> Mean of a population
 *Vast Search Effect* : If you repeatedly run different models and ask different questions with a large data set, you are bound to find 
 something interesting. This can be removed with *holdout set* and *target schuffling*. 
 
+*Regression to the mean* : Extreme observations tend to be followed by more central ones. It is the consequence of  particular 
+form of "selection bias". 
+
+**Specifying a hypothesis , the collectiong data following randomization and random sampling principles, ensures against bias**
+
+Sampling Distibution : Refers to the distribution of some sample statistics , over many samples drawn from the same population. 
+
+*****
+
+Sampling Distribution : Frequency distribution of *sample statistics* over many samples or resamples.
+
+Central Limit Theorem : Tendency of the sampling distibution to take on a normal shape as sample size rises.
+
+Standard Error : Variability of a sample *statistcs* over many samples (not to be confused with *standard deviation* , which, by iteself refers to variability of **individual data values**)
+
+
+*****
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
