@@ -106,6 +106,7 @@ loan_data <- read.csv("https://raw.githubusercontent.com/bthakr1/STATS/master/lo
 
 head(loan_data)
 
+nrow(loan_data)
 
 ```
 
@@ -113,11 +114,19 @@ head(loan_data)
 
 library(ggplot2)
 
+# Take a random sample
 
+samp_data <- data.frame(loan_amnt=sample(loan_data, 1000, replace = TRUE), type='data_dist')
+
+head(samp_data)
 ```
 
 
+*Standard Error* : Sums up the variability in the sampling distibution for a statistcs. As the sample size increases, SE decreases. 
 
+Numerator : s (standard Deviation)
+
+Denominator (sample size) : $$\sqrt{n}$$ 
 
 
 
