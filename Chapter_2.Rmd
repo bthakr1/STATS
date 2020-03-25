@@ -178,6 +178,8 @@ boot.ci(results, type="bca")
 
 ```
 
+*Bagging* : Process of running multiple trees (classification and regression) on bootstrap samples and then averaging their predictions. 
+Generally performs better than using a single tree.
 
 
 
@@ -207,22 +209,4 @@ boot.ci(results, type="bca")
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*Stratified Sampling* : Dividing the population into strat and randomly sampling from the strata.
 
