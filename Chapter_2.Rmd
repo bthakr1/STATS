@@ -126,7 +126,75 @@ head(samp_data)
 
 Numerator : s (standard Deviation)
 
-Denominator (sample size) : $$\sqrt{n}$$ 
+Denominator : square root of sample size or n
+
+```{r}
+
+x <- c(1,2.3,3,4.5,5,5.5,5.6,5.7,19)
+
+se = sd(x)/sqrt(length(x))
+
+se
+
+
+```
+
+*Bootstrap*
+
+To estimate the sampling distribution of a statistics, or of model parameters, is to draw additional samples, with replacements, from the sample itself and recalculate the statistics or model for each resample.
+
+Does not involve any assumption about the underlying data.
+
+
+```{r}
+
+library(boot)
+
+hsb2 <- read.table("https://stats.idre.ucla.edu/stat/data/hsb2.csv", sep=",", header=T)
+
+fc <- function(d,i){
+  d2 <- d[i,]
+  return(cor(d2$write,d2$math))
+}
+
+#bootcorr <- boot(hsb2,fc,R=500)
+
+#bootcorr
+
+rsq <- function(formula, data , indices){
+  d <- data[indices,]
+  fit <- lm(formula,data = d)
+  return(summary(fit)$r.square)
+}
+
+results <- boot(data = mtcars, statistic = rsq, R = 1000, formula = mpg~wt+disp)
+
+results
+
+plot(results)
+
+boot.ci(results, type="bca")
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
