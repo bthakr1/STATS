@@ -209,10 +209,17 @@ x <- sample.int(10000,10)
 margin_of_error <- qnorm(0.95)*(sd(x)/sqrt(length(x)))
 
 # lower bound of mean
-mean(x) - margin_of_error
+lb_90 = mean(x) - margin_of_error
 
 #upper bound of mean
-mean(x) + margin_of_error
+ub_90 = mean(x) + margin_of_error
+
+cat("The 90% Upper bound on mean is :", lb_90 ) 
+
+cat(" And ")
+
+cat("The 90% Lower bound on mean is :",  ub_90)
+
 
 #For 95 % CI
 # Alpha will be 1-.95 = 0.05
@@ -224,9 +231,11 @@ me <- qnorm(0.0975)*(sd(x)/sqrt(length(x)))
 
 
 # lower bound on mean
-mean(x) - me
+lb = mean(x) - me
 # upper bound on mean
-mean(x) + me
+ub = mean(x) + me
+
+cat("The 95% Upper bound on mean is :", lb , "The 95% Lower bound on mean is :",  ub)
 
 
 
