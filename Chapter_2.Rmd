@@ -190,7 +190,47 @@ Example : An 90% CI around a sample estimate should, on average, contain similar
 One more Example : An 75 % CI around a sample estimate should, on average, contain similar sample estimate 75 % of the time. 
 
 
+```{r}
 
+x <- sample.int(10000,10)
+
+# assuming x is normally distributed with unknown mean and sd of 3140
+
+# Find 90% and 95% CI for mean
+
+# For 90 % CI 
+# Alpha will be 1-0.90 = 0.10
+# z(alpha/2) = z(0.05)
+# qnorm(0.95)
+
+# margin of error will be
+# qnorm(0.95)*(SD/sqrt(n))
+
+margin_of_error <- qnorm(0.95)*(sd(x)/sqrt(length(x)))
+
+# lower bound of mean
+mean(x) - margin_of_error
+
+#upper bound of mean
+mean(x) + margin_of_error
+
+#For 95 % CI
+# Alpha will be 1-.95 = 0.05
+# z(alpha/2) = z(0.025)
+#qnorm(0.975)
+
+# margin of error for 95% CI
+me <- qnorm(0.0975)*(sd(x)/sqrt(length(x)))
+
+
+# lower bound on mean
+mean(x) - me
+# upper bound on mean
+mean(x) + me
+
+
+
+```
 
 
 
