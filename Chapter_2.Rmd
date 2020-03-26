@@ -181,9 +181,13 @@ boot.ci(results, type="bca")
 *Bagging* : Process of running multiple trees (classification and regression) on bootstrap samples and then averaging their predictions. 
 Generally performs better than using a single tree.
 
+Reduces the variance of an individual base learner. 
 
+**Confidence Interval**
 
+Example : An 90% CI around a sample estimate should, on average, contain similar sample estimate 90% of the time.
 
+One more Example : An 75 % CI around a sample estimate should, on average, contain similar sample estimate 75 % of the time. 
 
 
 
